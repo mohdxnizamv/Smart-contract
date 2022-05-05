@@ -5,7 +5,7 @@ pragma solidity >= 0.7.0 < 0.9.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract Honor is ERC20 {
+contract KAZAM is ERC20 {
   address private owner;
   address private KAZAM;
   uint private limit = 100000000 * 10 ** 18;
