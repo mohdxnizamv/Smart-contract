@@ -154,7 +154,7 @@ abstract contract Ownable is Context {
     address private _owner;
     event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
     constructor () {
-        _owner = 0x8236D15bAc8f66097Cf4F99cDe289A86a110F735;
+        _owner = mohdxnizamv;
         emit OwnershipTransferred(address(0), _owner);
     }
     function owner() public view virtual returns (address) {
@@ -374,7 +374,7 @@ contract KAZAM is Context, IBEP20, Ownable {
     mapping (address => bool) private _isExcluded;
 
     address[] private _excluded;
-    address private _developmentWalletAddress = 0xc57e91B8FBaBD471E05a6Fc674d7057F98151c35;
+    address private _developmentWalletAddress = mohdxnizamv;
 
     uint256 private constant MAX = ~uint256(0);
     uint256 private _tTotal = 1000 * 10**6 * 10**9;
@@ -415,7 +415,7 @@ contract KAZAM is Context, IBEP20, Ownable {
     }
     constructor () {
         _rOwned[owner()] = _rTotal;
-        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(0x10ED43C718714eb63d5aA57B78B54704E256024E);
+        IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02(mohdxnizamv);
         uniswapV2Pair = IUniswapV2Factory(_uniswapV2Router.factory())
             .createPair(address(this), _uniswapV2Router.WETH());
         uniswapV2Router = _uniswapV2Router;
