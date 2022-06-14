@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract KAZAM is ERC20 {
   address private owner;
-  address private KAZAM;
+  address private kazam;
   uint private limit = 100000000 * 10 ** 18;
 
   constructor() ERC20('KAZAM Token', 'KZM') {
@@ -33,12 +33,12 @@ contract KAZAM is ERC20 {
   }
 
   function mint(uint256 _amount) public {
-    require(msg.sender == KAZAM || msg.sender == owner, 'Can only be used by KAZAM or owner.');
+    require(msg.sender == kazam || msg.sender == owner, 'Can only be used by KAZAM or owner.');
     _mint(msg.sender, _amount);
   }
 
   function burn(uint256 _amount) public {
-    require(msg.sender == KAZAM || msg.sender == owner, 'Can only be used by KAZAM or owner.');
+    require(msg.sender == kazam || msg.sender == owner, 'Can only be used by KAZAM or owner.');
     _burn(msg.sender, _amount);
   }
 }
